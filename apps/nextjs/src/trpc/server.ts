@@ -1,10 +1,9 @@
+import type { AppRouter } from "@kdramadb/api";
 import { cache } from "react";
 import { headers } from "next/headers";
+import { createCaller, createTRPCContext } from "@kdramadb/api";
+import { auth } from "@kdramadb/auth";
 import { createHydrationHelpers } from "@trpc/react-query/rsc";
-
-import type { AppRouter } from "@acme/api";
-import { createCaller, createTRPCContext } from "@acme/api";
-import { auth } from "@acme/auth";
 
 import { createQueryClient } from "./query-client";
 

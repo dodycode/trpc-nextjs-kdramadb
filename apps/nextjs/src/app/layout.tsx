@@ -1,10 +1,9 @@
 import type { Metadata, Viewport } from "next";
+import { cn } from "@kdramadb/ui";
+import { ThemeProvider } from "@kdramadb/ui/theme";
+import { Toaster } from "@kdramadb/ui/toast";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
-
-import { cn } from "@acme/ui";
-import { ThemeProvider, ThemeToggle } from "@acme/ui/theme";
-import { Toaster } from "@acme/ui/toast";
 
 import { TRPCReactProvider } from "~/trpc/react";
 
@@ -52,9 +51,9 @@ export default function RootLayout(props: { children: React.ReactNode }) {
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <TRPCReactProvider>{props.children}</TRPCReactProvider>
-          <div className="absolute bottom-4 right-4">
+          {/* <div className="absolute bottom-4 right-4">
             <ThemeToggle />
-          </div>
+          </div> */}
           <Toaster />
         </ThemeProvider>
       </body>
